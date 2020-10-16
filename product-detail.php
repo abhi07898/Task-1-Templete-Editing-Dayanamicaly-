@@ -11,7 +11,7 @@
       <div class="aa-catg-head-banner-content">
         <h2>T-Shirt</h2>
         <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>         
+          <li><a href="product.php">Home</a></li>         
           <li><a href="#">Product</a></li>
           <li class="active">T-shirt</li>
         </ol>
@@ -34,7 +34,7 @@
                   <div class="aa-product-view-slider">                                
                     <div id="demo-1" class="simpleLens-gallery-container">
                       <div class="simpleLens-container">
-                        <div class="simpleLens-big-image-container"><a data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-lens-image"><img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image"></a></div>
+                        <div class="simpleLens-big-image-container"><a data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-lens-image"><img src="" class="simpleLens-big-image"></a></div>
                       </div>
                       <div class="simpleLens-thumbnails-container">
                           <a data-big-image="img/view-slider/medium/polo-shirt-1.png" data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">
@@ -51,7 +51,21 @@
                   </div>
                 </div>
                 <!-- Modal view content -->
-                <div class="col-md-7 col-sm-7 col-xs-12">
+               
+                
+              <?php include 'product_detail_demo.php';?>
+             
+
+
+
+
+
+
+
+
+
+
+                <!-- <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="aa-product-view-content">
                     <h3>T-Shirt</h3>
                     <div class="aa-price-block">
@@ -95,7 +109,7 @@
                       <a class="aa-add-to-cart-btn" href="#">Compare</a>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="aa-product-details-bottom">

@@ -10,7 +10,7 @@
       <div class="aa-catg-head-banner-content">
         <h2>Fashion</h2>
         <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>         
+          <li><a href="product.php">Home</a></li>         
           <li class="active">Women</li>
         </ol>
       </div>
@@ -58,16 +58,16 @@
 ?>
 <?php
 
-$sql  = "SELECT `NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products WHERE `COLOR`=' $color_id' ";
+$sql  = "SELECT `SR_NO`,`NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products WHERE `COLOR`=' $color_id' ";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {  ?>
         <li>
     <figure>
-    <a class="aa-product-img" href='#'><img src="admin/<?php echo $row["IMAGE"]; ?>" alt="polo shirt img"></a>
-    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+    <a class="aa-product-img" href='product-detail.php?sr_no=<?php echo $row["SR_NO"]; ?>'><img src="admin/<?php echo $row["IMAGE"]; ?>" alt="polo shirt img"></a>
+    <a class="aa-add-card-btn"href='product-detail.php?sr_no=<?php echo $row["SR_NO"]; ?>'><span class="fa fa-shopping-cart"></span>Add To Cart</a>
     <figcaption>
-        <h4 class="aa-product-title"><a href="#">'<?php echo $row["NAME"]; ?>'</a></h4>
+        <h4 class="aa-product-title"><a href='product-detail.php?sr_no=<?php echo $row["SR_NO"]; ?>'>'<?php echo $row["NAME"]; ?>'</a></h4>
         <span class="aa-product-price">'<?php echo $row["PRICE"]; ?>'</span><span class="aa-product-price"><del>$65.50</del></span>
         <p class="aa-product-descrip">'<?php echo $row["DISCRIPTION"]; ?>'</p>
     </figcaption>
