@@ -7,13 +7,11 @@ $sql  = "SELECT  `NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION`, `CATEGORY` FROM prod
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $img = $row['IMAGE']; ?>
-    
-   
      <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="aa-product-view-content">
                     <h3><?php echo $row['NAME'];?></h3>
                     <div class="aa-price-block">
-                      <span class="aa-product-view-price"><?php echo $row['PRICE'];?></span>
+                      <span class="aa-product-view-price"><?php echo $row['PRICE']; ?></span>
                       <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
                     </div>
                     <p><?php echo $row['DISCRIPTION'];?></p>
