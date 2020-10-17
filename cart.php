@@ -1,7 +1,9 @@
 <?php include 'header.php'?>
   <!-- / header section -->
   <!-- menu -->
-  <?php include 'menu.php';?>
+  <?php include 'menu.php';
+  
+  ?>
   <!-- / menu -->  
  
   <!-- catg header banner section -->

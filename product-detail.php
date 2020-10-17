@@ -53,7 +53,7 @@
                 <!-- Modal view content -->
                
                 
-              <?php include 'product_detail_demo.php';?>
+              <?php include 'product_detail_backendshow.php';?>
              
 
 
