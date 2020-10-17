@@ -141,7 +141,9 @@
             <div class="aa-product-catg-pagination">
               <nav>
                 <ul class="pagination">
-                  <li>
+                <?php include 'pgination.php';?>
+                
+                  <!-- <li>
                     <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                     </a>
@@ -155,7 +157,7 @@
                     <a href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </nav>
             </div>

@@ -1,7 +1,15 @@
 <?php include 'admin/config.php';?>
 <?php
+$limit = 3;
 
-$sql  = "SELECT `SR_NO`, `NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products";
+if (isset($_GET['page'])) {
+   $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+$offset = ($page - 1)* $limit;
+
+$sql  = "SELECT `SR_NO`, `NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products LIMIT {$offset}, {$limit}";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) { ?>

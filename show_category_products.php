@@ -52,13 +52,19 @@
             </div>
             <div class="aa-product-catg-body">
               <ul class="aa-product-catg">
-<?php include 'admin/config.php';
+<?php //include 'admin/config.php';
     $cat_id = $_GET['cat_id'];
-    echo $cat_id;
-?>
-<?php
+  
 
-$sql  = "SELECT `SR_NO`,`NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products WHERE `CATEGORY`=' $cat_id' ";
+$limit = 3;
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+$offset = ($page - 1)* $limit;
+
+$sql  = "SELECT `SR_NO`,`NAME` , `PRICE`, `IMAGE`,  `DISCRIPTION` FROM products WHERE `CATEGORY`=' $cat_id' LIMIT {$offset}, {$limit} ";
     $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {  ?>
@@ -185,7 +191,37 @@ if ($result->num_rows > 0) {
             <div class="aa-product-catg-pagination">
               <nav>
                 <ul class="pagination">
-                  <li>
+                <?php
+                //include 'admin/config.php';
+
+                $sql1 = "SELECT * FROM products";
+                $result1 = $conn->query($sql1);
+                if ($result1->num_rows > 0) { 
+                    $total_records = mysqli_num_rows($result1);
+                    $limit = 3;
+                    $total_page = ceil($total_records/ $limit);
+                    if ($page>1) {
+                    echo '  <li>
+                            <a href="show_category_products.php?page='.($page-1).'&cat_id='.$cat_id.'" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                            </li>';
+                    }
+                    for ($i=1; $i<=$total_page; $i++) {
+                            echo '<li><a href="show_category_products.php?page='.$i.'&cat_id='.$cat_id.'">'.$i.'</a></li>';
+                    }
+                    if ($total_page > $page) {
+                        echo '<li>
+                                <a href="show_category_products.php?page='.($page+1).'&cat_id='.$cat_id.'" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                </a>    
+                            </li>';
+                    }
+
+                    
+                }
+?>
+                  <!-- <li>
                     <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                     </a>
@@ -199,7 +235,7 @@ if ($result->num_rows > 0) {
                     <a href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </nav>
             </div>
