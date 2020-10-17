@@ -1,6 +1,6 @@
 <?php include 'admin/config.php';?>
 <?php
-$limit = 3;
+$limit = 6;
 
 if (isset($_GET['page'])) {
    $page = $_GET['page'];
