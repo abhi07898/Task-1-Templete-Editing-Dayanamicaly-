@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php
+
+include 'header.php'?>
   <!-- / header section -->
   <!-- menu -->
   <?php include 'menu.php'; ?>
@@ -29,9 +31,11 @@
        <div class="col-md-12">
          <div class="cart-view-area">
            <div class="cart-view-table">
-             <form action="">
-               <div class="table-responsive">
-                  <table class="table">
+           <form action="">
+              <div class="table-responsive">                    
+              </table>
+               <?php include 'show_cart.php';?>
+                  <!-- <table class="table">
                     <thead>
                       <tr>
                         <th></th>
@@ -77,8 +81,8 @@
                         </td>
                       </tr>
                       </tbody>
-                  </table>
-                </div>
+                  </table> -->
+                  </div>
              </form>
              <!-- Cart Total view -->
              <div class="cart-view-total">
@@ -87,14 +91,15 @@
                  <tbody>
                    <tr>
                      <th>Subtotal</th>
-                     <td>$450</td>
+                     <td> Rs.  <?php echo $total; ?></td>
                    </tr>
                    <tr>
                      <th>Total</th>
-                     <td>$450</td>
+                     <td> Rs.  <?php echo $total; ?></td>
                    </tr>
                  </tbody>
                </table>
+                
                <a href="#" class="aa-cart-view-btn">Proced to Checkout</a>
              </div>
            </div>

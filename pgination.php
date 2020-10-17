@@ -5,7 +5,7 @@ $sql1 = "SELECT * FROM products";
 $result1 = $conn->query($sql1);
 if ($result1->num_rows > 0) { 
     $total_records = mysqli_num_rows($result1);
-    $limit = 3;
+    $limit = 6;
     $total_page = ceil($total_records/ $limit);
     if ($page>1) {
     echo '  <li>
